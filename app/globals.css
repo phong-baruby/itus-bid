@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-num: "Oswald", "Be Vietnam Pro", ui-sans-serif, sans-serif;
+
+  /* Màu thương hiệu lấy từ logo fit@hcmus (#111B88) */
+  --color-brand-50: #eef0fb;
+  --color-brand-100: #dde1f7;
+  --color-brand-200: #b9c0ef;
+  --color-brand-300: #8f99ec;
+  --color-brand-500: #2a36b8;
+  --color-brand-600: #1c27a3;
+  --color-brand-700: #111b88;
+  --color-brand-900: #0a1052;
+}
+
+:root {
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --ink: #12152b;
+  --muted: #646a85;
+  --line: #e3e6f0;
+  --accent: #111b88;      /* chữ nhấn */
+  --accent-soft: #eef0fb; /* nền nhấn nhẹ */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0d1a;
+    --card: #141831;
+    --ink: #eceefa;
+    --muted: #9aa0c0;
+    --line: #262b4d;
+    --accent: #8f99ec;
+    --accent-soft: #1b2150;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.muted { color: var(--muted); }
+.line { border-color: var(--line); }
+.accent { color: var(--accent); }
+.accent-soft { background: var(--accent-soft); }
+.num { font-family: var(--font-num); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+@keyframes flash {
+  0% { background-color: rgb(42 54 184 / 0.22); }
+  100% { background-color: transparent; }
+}
+.flash { animation: flash 1.2s ease-out; }
