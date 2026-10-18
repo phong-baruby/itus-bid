@@ -5,7 +5,7 @@ import { getSupabase, useMe } from "@/lib/supabase";
 import { countdown, timeAgo, vnd } from "@/lib/format";
 import type { Bid, Jersey, Me, Settings } from "@/lib/types";
 import Header, { Avatar, GoogleButton } from "./Header";
-import VietQR from "./VietQR";
+import PaymentQR from "./PaymentQR";
 
 function useServerNow(offset: number) {
   const [now, setNow] = useState(() => Date.now() + offset);
@@ -406,7 +406,7 @@ function ClosedResult({ jersey, me }: { jersey: Jersey; me: Me | null }) {
       {jersey.paid ? (
         <p className="accent-soft accent inline-block rounded-full px-3 py-1 text-sm font-semibold">✓ Đã đóng quỹ</p>
       ) : (
-        <VietQR amount={jersey.current_price} number={jersey.number} name={jersey.leader_name} highlight={isWinner} />
+        <PaymentQR amount={jersey.current_price} number={jersey.number} name={jersey.leader_name} highlight={isWinner} />
       )}
     </div>
   );

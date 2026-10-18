@@ -7,7 +7,7 @@ Web đấu giá số áo bị trùng để gây quỹ đội. Mỗi số trùng 
 - **Mỗi người chỉ dẫn đầu 1 số** — đang giữ giá cao nhất số 7 thì không trả giá số khác được, đến khi bị vượt.
 - **Chống "bắn tỉa"** — có người trả giá trong 2 phút cuối thì deadline chung lùi thêm 2 phút.
 - **Realtime** — giá mới hiện ngay cho mọi người.
-- **VietQR** — hết giờ, người thắng quét mã chuyển khoản đúng số tiền + nội dung.
+- **QR Momo** — hết giờ, người thắng quét mã Momo quỹ đội, tự gõ số tiền + nội dung (copy sẵn) để chuyển.
 - **/admin** — mở nhiều số cùng lúc (`7, 10, 23`), huỷ giá troll, chặn người lạ, tick đã thu, tải kết quả CSV.
 
 Stack: Next.js 16 + Supabase (Postgres + Auth + Realtime) + Tailwind 4. Free hoàn toàn.
@@ -51,4 +51,5 @@ npm run dev
 - Mọi lượt trả giá đi qua hàm `place_bid` trong Postgres, xếp hàng tuần tự nên 2 người bấm cùng lúc cũng không lỗi luật.
 - Người chơi chỉ thấy tên + avatar của nhau; email chỉ admin xem được.
 - Đổi logo: thay `public/logo.png` (bản màu) và `public/logo-white.png` (bản trắng cho dark mode); favicon ở `app/icon.png`.
+- Đổi mã QR Momo nhận quỹ: thay file `public/momo-qr.jpg`.
 - Supabase free tạm dừng nếu 7 ngày không có truy cập — vào dashboard bấm Restore là chạy lại.
